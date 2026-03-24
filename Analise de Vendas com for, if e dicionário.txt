@@ -1,0 +1,42 @@
+# Exemplo de Regras de imposto
+#Produtos até 1000 → imposto 10%
+#Produtos acima de 1000 → imposto 15%
+
+#Durante o loop:
+#somei todos os impostos
+#no final mostrei:
+#Total de imposto arrecadado: R$X
+
+#Adicionei mais uma condição:
+#Se o preço for maior que 2000, exibirá: Produto premium identificado
+#E a quantidade de produtos premium
+#E por ultimo calculei o faturamento total da loja.
+
+
+
+
+lista_precos = [300, 1200, 800, 2500, 150]
+
+produtos_premium = 0
+total_imposto = 0
+
+for preco in lista_precos:
+    if preco > 15000:          # ← maior primeiro
+        taxa = 0.20
+    elif preco > 2000:         # ← depois o intermediário
+        taxa = 0.15
+        produtos_premium += 1  # ← contagem corrigida
+        print("Produto premium identificado")
+    else:
+        taxa = 0.1
+
+    imposto = taxa * preco
+    total_imposto = total_imposto + imposto
+    print(f"Preço: R${preco:,.2f} - Imposto: R${imposto:,.2f}")
+
+print(f"Total de imposto: R${total_imposto:,.2f}")
+print(f"Quantidade de produtos premium: {produtos_premium}")
+
+
+faturamento_total = sum(lista_precos)
+print(f"Faturamento total da loja: R${faturamento_total:,.2f}")
