@@ -20,10 +20,11 @@ lista_precos = [300, 1200, 800, 2500, 150]
 produtos_premium = 0
 total_imposto = 0
 
+
 for preco in lista_precos:
     if preco > 15000:          # ← maior primeiro
         taxa = 0.20
-    elif preco > 2000:         # ← depois o intermediário
+    elif preco > 1000:         # ← depois o intermediário
         taxa = 0.15
         produtos_premium += 1  # ← contagem corrigida
         print("Produto premium identificado")
